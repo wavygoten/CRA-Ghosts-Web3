@@ -1,0 +1,54 @@
+@font-face {
+	font-family: "Creepster";
+	src: url("./fonts/Creepster-Regular.ttf") format("truetype");
+}
+
+body {
+	font-family: "Helvetica";
+}
+
+.list > * {
+	font-size: large;
+	background: linear-gradient(currentColor 0 0) var(--p, 100%) 100% /
+		var(--d, 0) 2px no-repeat;
+}
+.list > *:hover {
+	transition: 275ms, background-position 0s 0.3s;
+	--d: 100%;
+	--p: 0%;
+}
+
+.title {
+	font-family: "Creepster";
+	font-size: calc(26px + (44 - 26) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.header-1 {
+	font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.countdown-container {
+	font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+	position: relative;
+}
+
+.countdown-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 12px;
+	padding: 2px;
+	background: linear-gradient(45deg, rgb(255, 255, 255), rgb(54, 54, 54));
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: destination-out;
+	mask-composite: exclude;
+}
+
+@media screen and (max-width: 480px) {
+	.title {
+		text-align: center;
+	}
+}
